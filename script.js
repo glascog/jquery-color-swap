@@ -5,8 +5,8 @@ function onReady() {
 
     // Handlers
     $('#generateButton').on('click', handleGenerate);
-    $('main').on('click', '.yellowButton', turnYellow);
-    $('main').on('click', '.deleteButton', handleDelete);
+    $('#target').on('click', '.yellowButton', turnYellow);
+    $('#target').on('click', '.deleteButton', handleDelete);
 
 }
 // Create variable for number of divs
@@ -18,10 +18,9 @@ function handleDelete() {
     $(this).parent().parent().remove();
 }
 
-function turnYellow(event) {
-    event.preventDefault();
+function turnYellow() {
     console.log('inside turnYellow');
-    $('div').css('background-color', 'yellow');
+    $(this).parent().parent().css('background-color', 'yellow');
 }
 
 function handleGenerate(event) {
